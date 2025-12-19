@@ -1,4 +1,4 @@
-data "azurerm_network_interface" "ankit_nic" {
+data "azurerm_network_interface" "fk_nic" {
   name                = var.network_interface_name
   resource_group_name = var.resource_group_name
 }
