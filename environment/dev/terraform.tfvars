@@ -36,7 +36,7 @@ nic_config = {
     pip_name    = "pip-backend"
   }
 }
-network_interface_location = "eastus"
+network_interface_location = "centralindia"
 
 vm_config = {
   "frontend" = {
@@ -60,7 +60,7 @@ vm_config = {
 
   }
 }
-virtual_machine_location = "eastus"
+virtual_machine_location = "centralindia"
 
 nsg_config = {
   "nsgfrontend1" = {
