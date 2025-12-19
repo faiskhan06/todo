@@ -85,7 +85,7 @@ module "mysql_server" {
   source              = "../../modules/azurerm_sql_server"
   sql_server_name     = "todoapp-dbserver"
   resource_group_name = var.resource_group_name
-  location            = "eastus"
+  location            = "centralindia"
 
   admin_username = "admin"
   admin_password = "admin"
