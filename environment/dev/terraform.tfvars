@@ -1,7 +1,7 @@
 resource_group_name      = "todoapp-rg"
-resource_group_location  = "eastus"
+resource_group_location  = "centralindia"
 virtual_network_name     = "todo_vnet"
-virtual_network_location = "eastus"
+virtual_network_location = "centralindia"
 address_space            = ["192.168.0.0/16"]
 subnet_config = {
   "frontend" = {
