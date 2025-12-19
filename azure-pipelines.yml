@@ -1,0 +1,29 @@
+trigger : none
+pool:
+  name: fk-agent
+setps: 
+- task: TerraformInstaller@1
+  inputs:
+    terraformVersion: 'latest'
+
+- task: TerraformTask@5
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    workingDirectory: '$(System.DefaultWorkingDirectory)\environment\dev'
+- task: TerraformTask@5
+  inputs:
+    provider: 'azurerm'
+    command: 'plan'
+    workingDirectory: '$(System.DefaultWorkingDirectory)\environment\dev'
+    environmentServiceNameAzureRM: 'fk-sc'
+    backendServiceArm: 'fk-sc'
+
+- task: TerraformTask@5
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    workingDirectory: '$(System.DefaultWorkingDirectory)\environment\dev'
+    environmentServiceNameAzureRM: 'fk-sc'
+
+
