@@ -6,9 +6,7 @@ resource "azurerm_linux_virtual_machine" "fk_linux_vm" {
   admin_username                  = var.admin_username
   admin_password                  = var.admin_password
   disable_password_authentication = false
-  network_interface_ids = [
-    data.azurerm_network_interface.fk_nic.id
-  ]
+  network_interface_ids = [azurerm_network_interface.mynic.id]
 
 
   os_disk {
@@ -24,7 +22,7 @@ resource "azurerm_linux_virtual_machine" "fk_linux_vm" {
   }
    custom_data = base64encode(file(var.custom_data))
  depends_on = [
-    azurerm_network_interface.fk_nic,
+    azurerm_network_interface.mynic,
     azurerm_subnet.fk_subnet,
     azurerm_virtual_network.fk_vnet,
     azurerm_public_ip.fk_public_ip,
