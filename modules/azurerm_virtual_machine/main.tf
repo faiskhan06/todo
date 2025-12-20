@@ -24,7 +24,7 @@ resource "azurerm_linux_virtual_machine" "fk_linux_vm" {
  depends_on = [
     azurerm_network_interface.mynic,
     azurerm_subnet.fk_subnet,
-    azurerm_virtual_network.fk_vnet,
+    azurerm_virtual_network.polaris-vnet,
     azurerm_public_ip.fk_public_ip,
     azurerm_network_security_group.fk_nsg
   ]
